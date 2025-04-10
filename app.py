@@ -213,7 +213,7 @@ def show_login_page():
                 st.session_state.authenticated = True
                 st.session_state.username = username
                 st.success("Login successful!")
-                st.experimental_rerun()
+                st.rerun()
             else:
                 st.error("Invalid username or password")
         
@@ -247,7 +247,7 @@ def show_dashboard():
         if st.button("Logout"):
             st.session_state.authenticated = False
             st.session_state.username = ""
-            st.experimental_rerun()
+            st.rerun()
     
     # Page content
     if page == "Dashboard":
@@ -324,17 +324,17 @@ def show_dashboard_page():
     with col1:
         if st.button("New Search", use_container_width=True):
             st.session_state.page = "Search LinkedIn"
-            st.experimental_rerun()
+            st.rerun()
     
     with col2:
         if st.button("View All Leads", use_container_width=True):
             st.session_state.page = "Manage Leads"
-            st.experimental_rerun()
+            st.rerun()
     
     with col3:
         if st.button("Create Filter", use_container_width=True):
             st.session_state.page = "Create Filters"
-            st.experimental_rerun()
+            st.rerun()
 
 # Search page content
 def show_search_page():
